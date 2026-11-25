@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rustfs-web-app
+  namespace: rustfs-lab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rustfs-web-app
+  template:
+    metadata:
+      labels:
+        app: rustfs-web-app
+    spec:
+      containers:
+        - name: web-app
+          image: ghcr.io/joselumbanraja/rustfs-web-app:latest
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - secretRef:
+                name: rustfs-s3-creds

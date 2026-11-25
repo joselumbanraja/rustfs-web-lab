@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rustfs-web-app
+  namespace: rustfs-lab
+spec:
+  selector:
+    app: rustfs-web-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
