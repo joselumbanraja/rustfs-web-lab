@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: web-app
-          image: ghcr.io/joselumbanraja/rustfs-web-app:latest
+          image: ghcr.io/joselumbanraja/rustfs-web-app:596188071d22ec0d0b689877d0f127f70d2600a9
           ports:
             - containerPort: 3000
           envFrom:
